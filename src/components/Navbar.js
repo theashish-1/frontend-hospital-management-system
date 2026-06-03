@@ -1,7 +1,13 @@
 import React from 'react'
 import logo1 from '../assests/logo-1.jpg'
-
+import LoginPage from '../pages/LoginPage'
+import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
+  const navigate = useNavigate();
+  function loginHandler(){
+    navigate('/login');
+    
+  }
   return (
     // Backdrop wrapper ensuring full width, structural containment, and sticky top placement
     <nav className='w-full bg-white backdrop-blur-md sticky top-0 z-50 border-b border-slate-50/50 '>
@@ -43,7 +49,7 @@ const Navbar = () => {
 
         {/* User Session Action Buttons */}
         <div className='flex flex-row items-center gap-4'>
-          <button className='text-[15px] font-semibold text-slate-700 hover:text-amber-500 transition-colors duration-200 px-3 py-2 capitalize hover:bg-slate-900 hover:text-white rounded-full shadow-sm'>
+          <button onClick={loginHandler} className='text-[15px] font-semibold text-slate-700 hover:text-amber-500 transition-colors duration-200 px-3 py-2 capitalize hover:bg-slate-900 hover:text-white rounded-full shadow-sm'>
             login
           </button>
 
