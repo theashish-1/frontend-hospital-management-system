@@ -1,12 +1,14 @@
 import React from 'react'
 import logo1 from '../assests/logo-1.jpg'
-import LoginPage from '../pages/LoginPage'
 import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
   const navigate = useNavigate();
   function loginHandler(){
     navigate('/login');
     
+  }
+  function signupHandler(){
+    navigate('/signup');
   }
   return (
     // Backdrop wrapper ensuring full width, structural containment, and sticky top placement
@@ -54,7 +56,7 @@ const Navbar = () => {
           </button>
 
           {/* Premium Capsule button mimicking the template layout outline button */}
-          <button className='text-[14px] font-semibold text-slate-900 border-2  bg-transparent hover:bg-slate-900 hover:text-white px-5 py-2 rounded-full  transition-all duration-200 ease-in-out transform active:scale-95 capitalize'>
+          <button onClick={signupHandler} className='text-[14px] font-semibold text-slate-900 border-2  bg-transparent hover:bg-slate-900 hover:text-white px-5 py-2 rounded-full  transition-all duration-200 ease-in-out transform active:scale-95 capitalize'>
             sign up
           </button>
         </div>
